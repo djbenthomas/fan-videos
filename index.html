@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Send Benny Your Video — Benny Thomas Band</title>
+<meta name="description" content="Upload your videos from the show and send them straight to Benny Thomas.">
+<meta name="theme-color" content="#0e0f13">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  :root{
+    --bg:#0e0f13; --card:#17181f; --card2:#1d1f28; --line:#2b2d38;
+    --txt:#f4f2ee; --muted:#9a9daa; --gold:#f5b942; --gold-dim:#c8932f;
+    --ok:#4ade80; --err:#f87171;
+  }
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(900px 500px at 50% -10%, rgba(245,185,66,.14), transparent 65%),
+      var(--bg);
+    color:var(--txt);
+    font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    min-height:100vh; padding:22px 16px 48px;
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .wrap{width:100%;max-width:560px}
+  .brand{display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:22px}
+  .brand svg{flex:0 0 auto}
+  .brand span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:30px;line-height:1.14;margin:0 0 10px;text-align:center;letter-spacing:-.02em}
+  h1 em{color:var(--gold);font-style:normal}
+  .sub{text-align:center;color:var(--muted);margin:0 auto 26px;max-width:420px;font-size:15px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+  /* drop zone */
+  #drop{
+    border:1.5px dashed #3a3d4a;border-radius:16px;padding:34px 18px;text-align:center;
+    transition:.16s; cursor:pointer; background:rgba(255,255,255,.012);
+  }
+  #drop.hot{border-color:var(--gold);background:rgba(245,185,66,.07);transform:scale(.995)}
+  #drop .icon{font-size:34px;line-height:1;margin-bottom:12px;display:block}
+  #drop .big{font-weight:650;font-size:17px;margin-bottom:4px}
+  #drop .small{color:var(--muted);font-size:13.5px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;padding:15px 18px;border-radius:13px;border:0;cursor:pointer;
+    font-size:16px;font-weight:650;font-family:inherit;
+    background:linear-gradient(180deg,#f8c65a,#e5a832);color:#22180a;
+    box-shadow:0 6px 20px -8px rgba(245,185,66,.6);
+    transition:.15s; text-decoration:none;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt);box-shadow:none;font-weight:600}
+  .btn[disabled]{opacity:.5;pointer-events:none}
+  .mt{margin-top:12px}
+  /* file list */
+  #list{margin-top:16px;display:none;flex-direction:column;gap:10px}
+  .file{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+  .file .row{display:flex;align-items:center;gap:10px}
+  .file .nm{font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+  .file .sz{font-size:12px;color:var(--muted);flex:0 0 auto;font-variant-numeric:tabular-nums}
+  .file .st{font-size:12px;margin-top:7px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+  .bar{height:5px;background:#101119;border-radius:99px;overflow:hidden;margin-top:9px}
+  .bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-dim),var(--gold));transition:width .25s ease;border-radius:99px}
+  .file.done .bar > i{background:var(--ok)}
+  .file.fail{border-color:rgba(248,113,113,.5)}
+  .file.fail .bar > i{background:var(--err)}
+  .file.done .nm::after{content:" ✓";color:var(--ok)}
+  /* success */
+  #done{display:none;text-align:center;padding:8px 4px 4px}
+  #done .check{font-size:44px;line-height:1;margin-bottom:10px}
+  #done h2{margin:0 0 8px;font-size:23px}
+  #done p{color:var(--muted);margin:0 0 18px;font-size:14.5px}
+  .note{color:var(--muted);font-size:12.5px;text-align:center;margin-top:18px;line-height:1.55}
+  .note a{color:var(--gold);text-decoration:none}
+  .foot{margin-top:26px;text-align:center;color:#63666f;font-size:11.5px;letter-spacing:.02em}
+  .hint{color:var(--muted);font-size:13px;text-align:center;margin-top:14px;display:none}
+  .hint.show{display:block}
+  @media (max-width:380px){h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M9 18V5l10-2v13" stroke="#f5b942" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="6.5" cy="18" r="2.6" stroke="#f5b942" stroke-width="1.7"/>
+      <circle cx="16.5" cy="16" r="2.6" stroke="#f5b942" stroke-width="1.7"/>
+    </svg>
+    <span>Benny Thomas Band</span>
+  </div>
+
+  <h1>Send Benny Your <em>Video</em></h1>
+  <p class="sub">Got footage from the show? Drop it here and it goes straight to Benny. No app, no signup, no account.</p>
+
+  <div class="card" id="card">
+    <div id="drop" role="button" tabindex="0" aria-label="Choose videos to upload">
+      <span class="icon">🎥</span>
+      <div class="big">Tap to choose your videos</div>
+      <div class="small">or drag and drop them here</div>
+    </div>
+    <input id="picker" type="file" accept="video/*" multiple hidden>
+
+    <div id="list"></div>
+
+    <button class="btn mt" id="go" style="display:none">Upload <span id="goCount"></span></button>
+    <button class="btn ghost mt" id="more" style="display:none">Add more videos</button>
+
+    <div class="hint" id="hint">Keep this page open until the upload finishes.</div>
+
+    <div id="done">
+      <div class="check">✅</div>
+      <h2>Sent. Benny's got it.</h2>
+      <p>Thanks for filming — this stuff is gold to him.</p>
+      <a class="btn" id="sms" href="sms:+16615330100?&body=Hey%20Benny%20-%20I%20just%20sent%20you%20video%20from%20the%20show%20through%20your%20upload%20page.">Text Benny it's sent</a>
+      <a class="btn ghost mt" href="https://as-ulikeit.com">See what else Benny does</a>
+    </div>
+  </div>
+
+  <p class="note">Videos go to Benny on a secure link and are saved for <strong>7 days</strong>, so he'll grab them fast.<br>Large files on cell data can take a few minutes — stay on this page.</p>
+
+  <p class="foot">© <span id="yr"></span> Benny Thomas · AS·U·LIKE·IT Entertainment</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // Shared collection bin — every upload lands in the same place for Benny.
+  var BIN = "btb-fan-videos-7x4k9m2q";
+  var HOST = "https://filebin.net";
+
+  var drop   = document.getElementById("drop");
+  var picker = document.getElementById("picker");
+  var list   = document.getElementById("list");
+  var goBtn  = document.getElementById("go");
+  var goCount= document.getElementById("goCount");
+  var moreBtn= document.getElementById("more");
+  var hint   = document.getElementById("hint");
+  var done   = document.getElementById("done");
+  var card   = document.getElementById("card");
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  var queue = [];      // {file, el, bar, st, status}
+  var busy  = false;
+
+  function fmt(b){
+    if(b < 1024) return b + " B";
+    if(b < 1048576) return (b/1024).toFixed(0) + " KB";
+    if(b < 1073741824) return (b/1048576).toFixed(1) + " MB";
+    return (b/1073741824).toFixed(2) + " GB";
+  }
+
+  function addFiles(files){
+    var added = 0;
+    for(var i=0;i<files.length;i++){
+      var f = files[i];
+      if(!f) continue;
+      if(f.type && f.type.indexOf("video") !== 0 && !/\.(mp4|mov|m4v|hevc|avi|webm|mkv)$/i.test(f.name||"")){
+        continue; // videos only
+      }
+      if(f.size === 0) continue;
+      queue.push(makeRow(f));
+      added++;
+    }
+    if(!added) return;
+    done.style.display = "none";
+    moreBtn.style.display = "none";
+    list.style.display = "flex";
+    refreshGo();
+    if(queue.length && !busy) hint.classList.add("show");
+  }
+
+  function makeRow(f){
+    var el = document.createElement("div");
+    el.className = "file";
+    el.innerHTML =
+      '<div class="row"><div class="nm"></div><div class="sz">' + fmt(f.size) + '</div></div>' +
+      '<div class="bar"><i></i></div>' +
+      '<div class="st"><span class="msg">Ready</span><span class="pct"></span></div>';
+    el.querySelector(".nm").textContent = f.name || "video";
+    list.appendChild(el);
+    return { file:f, el:el, bar:el.querySelector("i"), msg:el.querySelector(".msg"),
+             pct:el.querySelector(".pct"), status:"ready" };
+  }
+
+  function refreshGo(){
+    var pending = queue.filter(function(q){ return q.status === "ready"; }).length;
+    goBtn.style.display = pending ? "flex" : "none";
+    goCount.textContent = pending === 1 ? "(1 video)" : "(" + pending + " videos)";
+  }
+
+  drop.addEventListener("click", function(){ picker.click(); });
+  drop.addEventListener("keydown", function(e){
+    if(e.key === "Enter" || e.key === " "){ e.preventDefault(); picker.click(); }
+  });
+  picker.addEventListener("change", function(){ addFiles(picker.files); picker.value = ""; });
+
+  ["dragenter","dragover"].forEach(function(ev){
+    drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add("hot"); });
+  });
+  ["dragleave","drop"].forEach(function(ev){
+    drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove("hot"); });
+  });
+  drop.addEventListener("drop", function(e){
+    if(e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+  });
+  // Page-level guard so a stray drop doesn't navigate away and lose the queue
+  ["dragover","drop"].forEach(function(ev){
+    window.addEventListener(ev, function(e){ if(e.target !== drop && !drop.contains(e.target)) e.preventDefault(); });
+  });
+
+  moreBtn.addEventListener("click", function(){ picker.click(); });
+
+  function uploadOne(entry){
+    return new Promise(function(resolve){
+      var f = entry.file;
+      var name = encodeURIComponent((f.name || "video.mp4").replace(/[^\w.\-]+/g, "_"));
+      var url = HOST + "/" + BIN + "/" + name;
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/octet-stream");
+      xhr.setRequestHeader("Accept", "application/json");
+
+      entry.status = "uploading";
+      entry.msg.textContent = "Uploading…";
+
+      xhr.upload.onprogress = function(e){
+        if(!e.lengthComputable) return;
+        var pct = Math.round(e.loaded / e.total * 100);
+        entry.bar.style.width = pct + "%";
+        entry.pct.textContent = pct + "%";
+        if(pct > 2) entry.msg.textContent = "Uploading… " + fmt(e.loaded) + " of " + fmt(e.total);
+      };
+
+      xhr.onload = function(){
+        if(xhr.status >= 200 && xhr.status < 300){
+          entry.status = "done";
+          entry.el.classList.add("done");
+          entry.bar.style.width = "100%";
+          entry.pct.textContent = "100%";
+          entry.msg.textContent = "Sent ✓";
+          resolve(true);
+        }else{
+          fail(entry, "Server said " + xhr.status);
+          resolve(false);
+        }
+      };
+      xhr.onerror = function(){ fail(entry, "Connection dropped"); resolve(false); };
+      xhr.ontimeout = function(){ fail(entry, "Timed out"); resolve(false); };
+
+      xhr.send(f);
+    });
+  }
+
+  function fail(entry, why){
+    entry.status = "failed";
+    entry.el.classList.add("fail");
+    entry.msg.textContent = why + " — tap to retry";
+    entry.el.style.cursor = "pointer";
+    entry.el.onclick = function(){
+      entry.el.classList.remove("fail");
+      entry.el.onclick = null;
+      entry.status = "ready";
+      entry.msg.textContent = "Ready";
+      entry.bar.style.width = "0%";
+      entry.pct.textContent = "";
+      refreshGo();
+      goBtn.style.display = "flex";
+    };
+  }
+
+  goBtn.addEventListener("click", async function(){
+    if(busy) return;
+    busy = true;
+    goBtn.setAttribute("disabled","");
+    goBtn.textContent = "Uploading…";
+    hint.classList.add("show");
+
+    var pending = queue.filter(function(q){ return q.status === "ready"; });
+    var allOk = true;
+
+    for(var i=0;i<pending.length;i++){
+      var ok = await uploadOne(pending[i]);
+      if(!ok) allOk = false;
+    }
+
+    busy = false;
+    goBtn.removeAttribute("disabled");
+    goBtn.style.display = "none";
+    goBtn.textContent = "Upload";
+
+    var failed = queue.filter(function(q){ return q.status === "failed"; }).length;
+    var sent   = queue.filter(function(q){ return q.status === "done"; }).length;
+
+    if(sent && !failed){
+      done.style.display = "block";
+      moreBtn.style.display = "flex";
+      hint.classList.remove("show");
+      // clear finished rows so "add more" starts clean
+      queue = [];
+      setTimeout(function(){
+        list.innerHTML = "";
+        list.style.display = "none";
+      }, 1200);
+    }else if(failed){
+      hint.classList.remove("show");
+      refreshGo();
+      moreBtn.style.display = "flex";
+    }
+  });
+
+  // expose for testing
+  window.__uploadTest = function(blob, name){
+    var q = makeRow(new File([blob], name || "test.mp4", {type:"video/mp4"}));
+    list.style.display = "flex";
+    queue.push(q);
+    return uploadOne(q);
+  };
+})();
+</script>
+</body>
+</html>
