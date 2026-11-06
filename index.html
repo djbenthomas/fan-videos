@@ -221,7 +221,9 @@
 
       var xhr = new XMLHttpRequest();
       xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/octet-stream");
+      // text/plain is a CORS-safelisted value: it keeps the browser from firing a
+      // preflight the storage host doesn't answer. Bytes are sent unchanged.
+      xhr.setRequestHeader("Content-Type", "text/plain");
       xhr.setRequestHeader("Accept", "application/json");
 
       entry.status = "uploading";
