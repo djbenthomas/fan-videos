@@ -84,7 +84,7 @@ HTML = f'''<!DOCTYPE html>
   <div class="stats">
     <div class="stat"><b>900+</b><span>Events played</span></div>
     <div class="stat"><b>5 nights</b><span>Per week on Broadway</span></div>
-    <div class="stat"><b>{len(songs)}</b><span>Songs in the book</span></div>
+    <div class="stat"><b>3 hrs</b><span>Of live music</span></div>
     <div class="stat"><b>15+ yrs</b><span>Entertaining rooms</span></div>
   </div>
 </header>
@@ -183,9 +183,9 @@ HTML = f'''<!DOCTYPE html>
 <div class="quote">"During the ceremony and reception the band killed it. They kept everything on track... Everyone was cracking up and loved it — it even got the more shy guests out on the floor."<small>— Casey B., Bakersfield, CA · Google review</small></div>
 <div class="quote">"Everything ran smooth and the band was the best part of the night... THE BEST!"<small>— Jeannie H., Rosamond, CA · Google review</small></div>
 
-<h2>Repertoire <span class="thin">— {len(songs)} songs, no duplicates</span></h2>
-<p class="lede">Country and country-rock only — 90s and 2000s country, current country radio, southern rock, and the party
-songs every room asks for. Requests are welcome and usually played.</p>
+<h2>Repertoire <span class="thin">— a sample of what we play</span></h2>
+<p class="lede">A sample of the book: 90s and 2000s country, current country radio, southern rock, and the party songs every
+room asks for. Requests are welcome and usually played.</p>
 <ul class="setlist">
 {rows}
 </ul>
