@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cassie's Nashville Evidence Drop</title>
+<meta name="description" content="Upload your Nashville trip photos here. Yes, all of them.">
+<meta name="theme-color" content="#0e0f13">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤠</text></svg>">
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  :root{--bg:#0e0f13;--card:#17181f;--line:#2b2d38;--txt:#f4f2ee;--muted:#9a9daa;--gold:#f5b942;--ok:#4ade80}
+  body{margin:0;min-height:100vh;padding:24px 16px 48px;display:flex;flex-direction:column;align-items:center;
+       background:radial-gradient(900px 520px at 50% -10%, rgba(245,185,66,.14), transparent 65%), var(--bg);
+       color:var(--txt);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{width:100%;max-width:560px}
+  .brand{display:flex;align-items:center;gap:9px;justify-content:center;margin-bottom:20px}
+  .brand span{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:30px;line-height:1.14;margin:0 0 10px;text-align:center;letter-spacing:-.02em}
+  h1 em{color:var(--gold);font-style:normal}
+  .sub{text-align:center;color:var(--muted);margin:0 auto 22px;max-width:430px;font-size:15px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+  #drop{border:1.5px dashed #3a3d4a;border-radius:16px;padding:34px 18px;text-align:center;cursor:pointer;
+        transition:.16s;background:rgba(255,255,255,.012)}
+  #drop.hot{border-color:var(--gold);background:rgba(245,185,66,.07)}
+  #drop .icon{font-size:34px;display:block;margin-bottom:8px}
+  #drop .big{font-size:17px;font-weight:650;margin-bottom:4px}
+  #drop .small{font-size:13px;color:var(--muted)}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;margin-top:14px;
+       border:0;border-radius:13px;background:linear-gradient(180deg,#f7c65a,#e0a52f);color:#241a05;
+       font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+  .btn[disabled]{opacity:.55;cursor:default}
+  #list{display:none;flex-direction:column;gap:9px;margin-top:14px}
+  .file{background:#101119;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+  .file .row{display:flex;gap:10px;align-items:center}
+  .file .nm{flex:1;font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .file .sz{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .file .st{font-size:12px;color:var(--muted);margin-top:6px;display:flex;justify-content:space-between}
+  .bar{height:5px;background:#0a0b10;border-radius:99px;overflow:hidden;margin-top:8px}
+  .bar>i{display:block;height:100%;width:0;background:var(--gold);transition:width .25s}
+  .file.done .bar>i{background:var(--ok)}
+  .rules{margin:22px 0 0;padding:0 4px;list-style:none}
+  .rules li{position:relative;padding-left:24px;margin:7px 0;color:#c9cbd4;font-size:14px}
+  .rules li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+  #done{display:none;text-align:center;padding:6px 4px 2px}
+  #done h2{margin:0 0 6px;font-size:22px}
+  #done p{color:var(--muted);margin:0;font-size:14.5px}
+  .foot{text-align:center;color:#5e616b;font-size:11.5px;margin-top:22px}
+  .fine{font-size:11px;color:#4e515b;text-align:center;margin-top:18px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><span>Cassie · Nashville Trip · Evidence Drop</span></div>
+
+  <h1>Drop Your <em>Nashville</em> Photos Here</h1>
+  <p class="sub">You took pictures. I know you took pictures. Upload them so they exist somewhere other than your camera roll.</p>
+
+  <div class="card">
+    <div id="drop" role="button" tabindex="0">
+      <span class="icon">🤠</span>
+      <div class="big">Tap to choose your photos</div>
+      <div class="small">photos or videos · drag and drop works too</div>
+    </div>
+    <input id="picker" type="file" accept="image/*,video/*" multiple hidden>
+    <div id="list"></div>
+    <button class="btn" id="go" style="display:none">Upload <span id="goCount"></span></button>
+    <div id="done">
+      <h2>Received and filed. 📸</h2>
+      <p>Evidence secured. Jess has been notified.</p>
+    </div>
+  </div>
+
+  <ul class="rules">
+    <li>Everything from the trip — Broadway, the bar, the food, the chaos</li>
+    <li><strong>Especially you and Jess in bed.</strong> Don't pretend you don't have them.</li>
+    <li>The unflattering ones too. Those are the whole point.</li>
+    <li>No editing, no filtering, no "let me find a better one"</li>
+  </ul>
+
+  <p class="fine">Uploads land in a private drop only Benny can open.<br>Nothing here is posted anywhere. Joke page, real upload.</p>
+  <p class="foot">Built by Dale · not responsible for what ends up in the group chat</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // separate bin so trip photos never mix with band videos
+  var BIN = "cassie-nashville-trip-4k2p9x";
+  var HOST = "https://filebin.net";
+
+  var drop=document.getElementById("drop"), picker=document.getElementById("picker"),
+      list=document.getElementById("list"), goBtn=document.getElementById("go"),
+      goCount=document.getElementById("goCount"), done=document.getElementById("done");
+  var queue=[], busy=false;
+
+  function fmt(b){ if(b<1024)return b+" B"; if(b<1048576)return (b/1024).toFixed(0)+" KB";
+    if(b<1073741824)return (b/1048576).toFixed(1)+" MB"; return (b/1073741824).toFixed(2)+" GB"; }
+
+  function makeRow(f){
+    var el=document.createElement("div"); el.className="file";
+    el.innerHTML='<div class="row"><div class="nm"></div><div class="sz">'+fmt(f.size)+'</div></div>'+
+                 '<div class="bar"><i></i></div><div class="st"><span class="msg">Ready</span><span class="pct"></span></div>';
+    el.querySelector(".nm").textContent=f.name||"photo";
+    list.appendChild(el);
+    return {file:f,el:el,bar:el.querySelector("i"),msg:el.querySelector(".msg"),
+            pct:el.querySelector(".pct"),status:"ready"};
+  }
+
+  function refresh(){ var n=queue.filter(function(q){return q.status==="ready";}).length;
+    goBtn.style.display=n?"flex":"none"; goCount.textContent="("+n+(n===1?" file)":" files)"); }
+
+  function addFiles(files){
+    var added=0;
+    for(var i=0;i<files.length;i++){ var f=files[i];
+      if(!f||f.size===0) continue;
+      if(f.type && !/^(image|video)\//.test(f.type) && !/\.(jpe?g|png|heic|heif|gif|webp|mov|mp4|m4v)$/i.test(f.name||"")) continue;
+      queue.push(makeRow(f)); added++; }
+    if(!added) return;
+    done.style.display="none"; list.style.display="flex"; refresh();
+  }
+
+  drop.addEventListener("click",function(){picker.click();});
+  drop.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();picker.click();}});
+  picker.addEventListener("change",function(){addFiles(picker.files);picker.value="";});
+  ["dragenter","dragover"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.add("hot");});});
+  ["dragleave","drop"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.remove("hot");});});
+  drop.addEventListener("drop",function(e){ if(e.dataTransfer&&e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+  ["dragover","drop"].forEach(function(ev){window.addEventListener(ev,function(e){
+    if(e.target!==drop && !drop.contains(e.target)) e.preventDefault(); });});
+
+  function uploadOne(entry){
+    return new Promise(function(resolve){
+      var f=entry.file;
+      var name=encodeURIComponent((f.name||"photo.jpg").replace(/[^\w.\-]+/g,"_"));
+      var xhr=new XMLHttpRequest();
+      xhr.open("POST", HOST+"/"+BIN+"/"+name, true);
+      xhr.setRequestHeader("Content-Type","text/plain");
+      xhr.setRequestHeader("Accept","application/json");
+      entry.status="uploading"; entry.msg.textContent="Uploading…";
+      xhr.upload.onprogress=function(e){ if(!e.lengthComputable)return;
+        var p=Math.round(e.loaded/e.total*100); entry.bar.style.width=p+"%"; entry.pct.textContent=p+"%";
+        if(p>2) entry.msg.textContent="Uploading… "+fmt(e.loaded)+" of "+fmt(e.total); };
+      xhr.onload=function(){ if(xhr.status>=200&&xhr.status<300){ entry.status="done";
+          entry.el.classList.add("done"); entry.bar.style.width="100%"; entry.pct.textContent="100%";
+          entry.msg.textContent="Filed ✓"; resolve(true);
+        } else { entry.status="failed"; entry.msg.textContent="Server said "+xhr.status+" — tap to retry";
+          entry.el.onclick=function(){entry.status="ready";entry.msg.textContent="Ready";entry.bar.style.width="0%";entry.el.onclick=null;refresh();};
+          resolve(false); } };
+      xhr.onerror=function(){ entry.status="failed"; entry.msg.textContent="Connection dropped"; resolve(false); };
+      xhr.send(f);
+    });
+  }
+
+  goBtn.addEventListener("click",async function(){
+    if(busy) return; busy=true; goBtn.setAttribute("disabled",""); goBtn.textContent="Uploading…";
+    var pending=queue.filter(function(q){return q.status==="ready";});
+    for(var i=0;i<pending.length;i++){ await uploadOne(pending[i]); }
+    busy=false; goBtn.removeAttribute("disabled"); goBtn.textContent="Upload";
+    goBtn.style.display="none";
+    var sent=queue.filter(function(q){return q.status==="done";}).length;
+    if(sent){ done.style.display="block"; queue=[]; setTimeout(function(){list.innerHTML="";list.style.display="none";},1200); }
+  });
+})();
+</script>
+</body>
+</html>
