@@ -169,7 +169,7 @@ HTML = f'''<!DOCTYPE html>
     <ul class="clean">
       <li><b>Three hours of live music</b> — two sets with a break, or continuous if the room is moving</li>
       <li><b>Set list built around the membership</b> — Merle and Hank to current country, plus the classic rock everybody actually dances to</li>
-      <li><b>Dress and demeanor to club standard</b> — this is a country club, not a honky tonk</li>
+      <li><b>Dressed in our best country wear</b> — boots, hats, the works, and still club-appropriate</li>
       <li><b>Sound check in the afternoon</b>, off the dance floor before guests arrive</li>
       <li><b>Requests welcome</b> and usually played</li>
     </ul>
@@ -184,8 +184,8 @@ HTML = f'''<!DOCTYPE html>
 <div class="quote">"Everything ran smooth and the band was the best part of the night... THE BEST!"<small>— Jeannie H., Rosamond, CA · Google review</small></div>
 
 <h2>Repertoire <span class="thin">— {len(songs)} songs, no duplicates</span></h2>
-<p class="lede">90s and 2000s country, current country radio, classic and southern rock, and the party songs every room
-asks for. Requests are welcome and usually played.</p>
+<p class="lede">Country and country-rock only — 90s and 2000s country, current country radio, southern rock, and the party
+songs every room asks for. Requests are welcome and usually played.</p>
 <ul class="setlist">
 {rows}
 </ul>
