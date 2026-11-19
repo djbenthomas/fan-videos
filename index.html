@@ -32,6 +32,14 @@
   h1 em{color:var(--gold);font-style:normal}
   .sub{text-align:center;color:var(--muted);margin:0 auto 26px;max-width:420px;font-size:15px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+  /* instagram handle field */
+  .handle{display:block;margin:0 0 16px}
+  .handle-label{display:block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .handle-row{display:flex;align-items:center;gap:6px;background:#101119;border:1px solid var(--line);border-radius:12px;padding:0 14px;height:52px}
+  .handle-row:focus-within{border-color:var(--gold)}
+  .handle-row .at{color:var(--gold);font-size:17px;font-weight:600}
+  .handle-row input{flex:1;background:transparent;border:0;outline:0;color:var(--txt);font-size:17px;height:100%;font-family:inherit}
+  .handle-help{display:block;color:var(--muted);font-size:12.5px;margin-top:8px;line-height:1.5}
   /* drop zone */
   #drop{
     border:1.5px dashed #3a3d4a;border-radius:16px;padding:34px 18px;text-align:center;
@@ -94,6 +102,11 @@
   <p class="sub">Got footage from the show? Drop it here and it goes straight to Benny. No app, no signup, no account.</p>
 
   <div class="card" id="card">
+    <label class="handle" for="ig">
+      <span class="handle-label">Your Instagram handle</span>
+      <span class="handle-row"><span class="at">@</span><input id="ig" type="text" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="yourhandle"></span>
+      <span class="handle-help">So we can tag you when your clip goes up. Skip it if you'd rather stay anonymous.</span>
+    </label>
     <div id="drop" role="button" tabindex="0" aria-label="Choose videos to upload">
       <span class="icon">🎥</span>
       <div class="big">Tap to choose your videos</div>
@@ -111,7 +124,7 @@
     <div id="done">
       <div class="check">✅</div>
       <h2>Sent. Benny's got it.</h2>
-      <p>Thanks for filming — this stuff is gold to him.</p>
+      <p id="doneTag">Thanks for filming — this stuff is gold to him.</p>
       <a class="btn" id="sms" href="sms:+16615330100?&body=Hey%20Benny%20-%20I%20just%20sent%20you%20video%20from%20the%20show%20through%20your%20upload%20page.">Text Benny it's sent</a>
       <a class="btn ghost mt" href="https://as-ulikeit.com">See what else Benny does</a>
     </div>
@@ -119,7 +132,7 @@
 
   <p class="note">Videos go to Benny on a secure link and are saved for <strong>7 days</strong>, so he'll grab them fast.<br>Large files on cell data can take a few minutes — stay on this page.</p>
 
-  <p class="foot">© <span id="yr"></span> Benny Thomas · AS·U·LIKE·IT Entertainment</p>
+  <p class="foot">© <span id="yr"></span> Benny Thomas Band</p>
 </div>
 
 <script>
@@ -144,6 +157,11 @@
 
   var queue = [];      // {file, el, bar, st, status}
   var busy  = false;
+  var igEl  = document.getElementById("ig");
+
+  function cleanHandle(){
+    return (igEl.value || "").replace(/^@+/, "").replace(/[^A-Za-z0-9._]/g, "").slice(0, 30);
+  }
 
   function fmt(b){
     if(b < 1024) return b + " B";
@@ -216,7 +234,10 @@
   function uploadOne(entry){
     return new Promise(function(resolve){
       var f = entry.file;
-      var name = encodeURIComponent((f.name || "video.mp4").replace(/[^\w.\-]+/g, "_"));
+      // stamp the uploader's handle into the filename so Benny knows who to tag
+      var handle = cleanHandle();
+      var baseName = (f.name || "video.mp4").replace(/[^\w.\-]+/g, "_");
+      var name = encodeURIComponent((handle ? "ig-" + handle + "__" : "") + baseName);
       var url = HOST + "/" + BIN + "/" + name;
 
       var xhr = new XMLHttpRequest();
@@ -301,6 +322,10 @@
       done.style.display = "block";
       moreBtn.style.display = "flex";
       hint.classList.remove("show");
+      var h = cleanHandle();
+      document.getElementById("doneTag").textContent = h
+        ? "Thanks for filming — we'll tag @" + h + " when it goes up."
+        : "Thanks for filming — this stuff is gold to him.";
       // clear finished rows so "add more" starts clean
       queue = [];
       setTimeout(function(){
