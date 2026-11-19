@@ -1,117 +1,674 @@
 [
-  ["A Life Where We Work Out", "Flatland Cavalry feat. Kaitlin Butts"],
-  ["Achy Breaky Heart", "Billy Ray Cyrus"],
-  ["Ain't Goin' Down ('Til the Sun Comes Up)", "Garth Brooks"],
-  ["Ain't Livin' Long Like This", "Waylon Jennings"],
-  ["All Summer Long", "Kid Rock"],
-  ["Amarillo by Morning", "George Strait"],
-  ["American Saturday Night", "Brad Paisley"],
-  ["Amos Moses", "Jerry Reed"],
-  ["Any Man of Mine", "Shania Twain"],
-  ["Be My Baby Tonight", "John Michael Montgomery"],
-  ["Beer for My Horses", "Toby Keith"],
-  ["Beer Never Broke My Heart", "Luke Combs"],
-  ["Before He Cheats", "Carrie Underwood"],
-  ["Big Green Tractor", "Jason Aldean"],
-  ["Boot Scootin' Boogie", "Brooks & Dunn"],
-  ["Bottoms Up", "Brantley Gilbert"],
-  ["Boys 'Round Here", "Blake Shelton"],
-  ["Brand New Man", "Brooks & Dunn"],
-  ["Brokenheartsville", "Joe Nichols"],
-  ["Brown Eyed Girl", "Van Morrison"],
-  ["Bust a Move", "Young MC"],
-  ["Bye Bye", "Jo Dee Messina"],
-  ["Callin' Baton Rouge", "Garth Brooks"],
-  ["Chasin' That Neon Rainbow", "Alan Jackson"],
-  ["Chattahoochee", "Alan Jackson"],
-  ["Cherry Bomb", "John Mellencamp"],
-  ["Chicken Fried", "Zac Brown Band"],
-  ["Come On Eileen", "Dexys Midnight Runners"],
-  ["Copperhead Road", "Steve Earle"],
-  ["Country Girl (Shake It for Me)", "Luke Bryan"],
-  ["Country Squire", "Tyler Childers"],
-  ["Courtesy of the Red, White and Blue", "Toby Keith"],
-  ["Crazy Bitch", "Buckcherry"],
-  ["Dance Her Home", "Cody Johnson"],
-  ["Dancing in the Dark", "Bruce Springsteen"],
-  ["Dicked Down in Dallas", "Trey Lewis"],
-  ["Dirt on My Boots", "Jon Pardi"],
-  ["Dixieland Delight", "Alabama"],
-  ["Don't Even Know Your Name", "Alan Jackson"],
-  ["Don't Look Back in Anger", "Oasis"],
-  ["Don't Rock the Jukebox", "Alan Jackson"],
-  ["Down on the Farm", "Tim McGraw"],
-  ["Drink in My Hand", "Eric Church"],
-  ["Dust on the Bottle", "David Lee Murphy"],
-  ["D'yer Mak'er", "Led Zeppelin"],
-  ["Every Girl", "Turnpike Troubadours"],
-  ["Everything I Love", "Alan Jackson"],
-  ["Fancy Like", "Walker Hayes"],
-  ["Fishin' in the Dark", "Nitty Gritty Dirt Band"],
-  ["Folsom Prison Blues", "Johnny Cash"],
-  ["Footloose", "Kenny Loggins"],
-  ["Free Bird", "Lynyrd Skynyrd"],
-  ["Freight Train", "Alan Jackson"],
-  ["Goodbye Earl → All the Small Things", "Dixie Chicks → blink-182"],
-  ["Gunpowder and Lead", "Miranda Lambert"],
-  ["Guitars, Cadillacs", "Dwight Yoakam"],
-  ["Here for the Party", "Gretchen Wilson"],
-  ["Honky Tonk Women", "The Rolling Stones"],
-  ["Horseback", "Cody Johnson"],
-  ["How Do You Like Me Now?!", "Toby Keith"],
-  ["Hurts So Good", "John Mellencamp"],
-  ["I Like It, I Love It", "Tim McGraw"],
-  ["I Saw Her Standing There", "The Beatles"],
-  ["If You're Gonna Play in Texas", "Alabama"],
-  ["In a Hurry → Don't Stop Believin'", ""],
-  ["It's Five O'Clock Somewhere", "Alan Jackson & Jimmy Buffett"],
-  ["It's Still Rock and Roll to Me", "Billy Joel"],
-  ["Jackson", "Johnny Cash & June Carter Cash"],
-  ["Jolene", "Dolly Parton"],
-  ["Keep Your Hands to Yourself", "Georgia Satellites"],
-  ["Kerosene", "Miranda Lambert"],
-  ["Kiss Me in the Dark", "Randy Rogers Band"],
-  ["Last Night", "Morgan Wallen"],
-  ["Little Liza Jane", "Vince Gill"],
-  ["Louisiana Saturday Night", "Mel McDaniel"],
-  ["Love Story", "Taylor Swift"],
-  ["Luckenbach, Texas", "Waylon Jennings"],
-  ["Mama Tried", "Merle Haggard"],
-  ["Mama's Broken Heart", "Miranda Lambert"],
-  ["Margaritaville", "Jimmy Buffett"],
-  ["Mountain Music", "Alabama"],
-  ["Neon Moon", "Brooks & Dunn"],
-  ["Only Daddy That'll Walk the Line", "Waylon Jennings"],
-  ["Redneck Woman", "Gretchen Wilson"],
-  ["Ring of Fire", "Johnny Cash"],
-  ["Rocky Top", "The Osborne Brothers"],
-  ["Save a Horse (Ride a Cowboy)", "Big & Rich"],
-  ["She Thinks My Tractor's Sexy", "Kenny Chesney"],
-  ["She's Got It All", "Kenny Chesney"],
-  ["She's in Love with the Boy", "Trisha Yearwood"],
-  ["Should've Been a Cowboy", "Toby Keith"],
-  ["Small Town Saturday Night", "Hal Ketchum"],
-  ["Sold (The Grundy County Auction Incident)", "John Michael Montgomery"],
-  ["Some Girls Do", "Sawyer Brown"],
-  ["Something Like That", "Tim McGraw"],
-  ["Springsteen", "Eric Church"],
-  ["Superstition", "Stevie Wonder"],
-  ["Surfin' USA", "The Beach Boys"],
-  ["Sweet Home Alabama", "Lynyrd Skynyrd"],
-  ["Take It Easy", "Eagles"],
-  ["Take Me Home, Country Roads", "John Denver"],
-  ["Tequila Makes Her Clothes Fall Off", "Joe Nichols"],
-  ["Ten Rounds with Jose Cuervo", "Tracy Byrd"],
-  ["Tennessee Whiskey", "Chris Stapleton"],
-  ["The Devil Went Down to Georgia", "The Charlie Daniels Band"],
-  ["Trouble", ""],
-  ["Universal Sound", "Tyler Childers"],
-  ["Watermelon Crawl", "Tracy Byrd"],
-  ["What Was I Thinkin'", "Dierks Bentley"],
-  ["When It Rains It Pours", "Luke Combs"],
-  ["Where the Wild Things Are", "Luke Combs"],
-  ["Who's Your Daddy", "Toby Keith"],
-  ["You Can Call Me Al", "Paul Simon"],
-  ["You Look Like You Love Me", "Ella Langley & Riley Green"],
-  ["You May Be Right", "Billy Joel"]
+ [
+  "7 Summers",
+  "Morgan Wallen"
+ ],
+ [
+  "A Boy Named Sue",
+  "Johnny Cash"
+ ],
+ [
+  "A Life Where We Work Out",
+  "Flatland Cavalry feat. Kaitlin Butts"
+ ],
+ [
+  "Achy Breaky Heart",
+  "Billy Ray Cyrus"
+ ],
+ [
+  "Ain't Goin' Down ('Til the Sun Comes Up)",
+  "Garth Brooks"
+ ],
+ [
+  "Ain't Livin' Long Like This",
+  "Waylon Jennings"
+ ],
+ [
+  "All Summer Long",
+  "Kid Rock"
+ ],
+ [
+  "All the Pretty Girls",
+  "Kenny Chesney"
+ ],
+ [
+  "Amarillo by Morning",
+  "George Strait"
+ ],
+ [
+  "American Saturday Night",
+  "Brad Paisley"
+ ],
+ [
+  "Amos Moses",
+  "Jerry Reed"
+ ],
+ [
+  "Any Man of Mine",
+  "Shania Twain"
+ ],
+ [
+  "As Country As I Thought I Was",
+  "Benny Thomas (original)"
+ ],
+ [
+  "As Good As I Once Was",
+  "Toby Keith"
+ ],
+ [
+  "Barefoot Blue Jean Night",
+  "Jake Owen"
+ ],
+ [
+  "Be My Baby Tonight",
+  "John Michael Montgomery"
+ ],
+ [
+  "Beer for My Horses",
+  "Toby Keith"
+ ],
+ [
+  "Beer Never Broke My Heart",
+  "Luke Combs"
+ ],
+ [
+  "Before He Cheats",
+  "Carrie Underwood"
+ ],
+ [
+  "Big Green Tractor",
+  "Jason Aldean"
+ ],
+ [
+  "Big River",
+  "Johnny Cash"
+ ],
+ [
+  "Blister in the Sun",
+  "Violent Femmes"
+ ],
+ [
+  "Boot Scootin' Boogie",
+  "Brooks & Dunn"
+ ],
+ [
+  "Born on the Bayou",
+  "Creedence Clearwater Revival"
+ ],
+ [
+  "Bottoms Up",
+  "Brantley Gilbert"
+ ],
+ [
+  "Boys 'Round Here",
+  "Blake Shelton"
+ ],
+ [
+  "Brand New Man",
+  "Brooks & Dunn"
+ ],
+ [
+  "Brokenheartsville",
+  "Joe Nichols"
+ ],
+ [
+  "Brown Eyed Girl",
+  "Van Morrison"
+ ],
+ [
+  "Bury My Bones",
+  "Whiskey Myers"
+ ],
+ [
+  "Bust a Move",
+  "Young MC"
+ ],
+ [
+  "Bye Bye",
+  "Jo Dee Messina"
+ ],
+ [
+  "Callin' Baton Rouge",
+  "Garth Brooks"
+ ],
+ [
+  "CCR / Cash Medley",
+  "Creedence Clearwater Revival & Johnny Cash"
+ ],
+ [
+  "Chasin' That Neon Rainbow",
+  "Alan Jackson"
+ ],
+ [
+  "Chattahoochee",
+  "Alan Jackson"
+ ],
+ [
+  "Cherry Bomb",
+  "John Mellencamp"
+ ],
+ [
+  "Chicken Fried",
+  "Zac Brown Band"
+ ],
+ [
+  "Come On Eileen",
+  "Dexys Midnight Runners"
+ ],
+ [
+  "Copperhead Road",
+  "Steve Earle"
+ ],
+ [
+  "Country Girl (Shake It for Me)",
+  "Luke Bryan"
+ ],
+ [
+  "Country Squire",
+  "Tyler Childers"
+ ],
+ [
+  "Courtesy of the Red, White and Blue",
+  "Toby Keith"
+ ],
+ [
+  "Crazy Bitch",
+  "Buckcherry"
+ ],
+ [
+  "Daddy's at the Bar",
+  "Benny Thomas (original)"
+ ],
+ [
+  "Dance Her Home",
+  "Cody Johnson"
+ ],
+ [
+  "Dancing in the Dark",
+  "Bruce Springsteen"
+ ],
+ [
+  "Dirt on My Boots",
+  "Jon Pardi"
+ ],
+ [
+  "Dixieland Delight",
+  "Alabama"
+ ],
+ [
+  "Don't Even Know Your Name",
+  "Alan Jackson"
+ ],
+ [
+  "Don't Look Back in Anger",
+  "Oasis"
+ ],
+ [
+  "Don't Rock the Jukebox",
+  "Alan Jackson"
+ ],
+ [
+  "Down at the Twist and Shout",
+  "Mary Chapin Carpenter"
+ ],
+ [
+  "Down on the Farm",
+  "Tim McGraw"
+ ],
+ [
+  "Drink in My Hand",
+  "Eric Church"
+ ],
+ [
+  "Drinkin' Problem",
+  "Midland"
+ ],
+ [
+  "Dust on the Bottle",
+  "David Lee Murphy"
+ ],
+ [
+  "D'yer Mak'er",
+  "Led Zeppelin"
+ ],
+ [
+  "Edge of Seventeen",
+  "Stevie Nicks"
+ ],
+ [
+  "Escape (The Piña Colada Song)",
+  "Rupert Holmes"
+ ],
+ [
+  "Every Girl",
+  "Turnpike Troubadours"
+ ],
+ [
+  "Everything I Love",
+  "Alan Jackson"
+ ],
+ [
+  "Fancy Like",
+  "Walker Hayes"
+ ],
+ [
+  "Feathered Indians",
+  "Tyler Childers"
+ ],
+ [
+  "Fire on the Mountain",
+  "The Marshall Tucker Band"
+ ],
+ [
+  "Fishin' in the Dark",
+  "Nitty Gritty Dirt Band"
+ ],
+ [
+  "Folsom Prison Blues",
+  "Johnny Cash"
+ ],
+ [
+  "Footloose",
+  "Kenny Loggins"
+ ],
+ [
+  "Free Bird",
+  "Lynyrd Skynyrd"
+ ],
+ [
+  "Freight Train",
+  "Alan Jackson"
+ ],
+ [
+  "Friends in Low Places",
+  "Garth Brooks"
+ ],
+ [
+  "Gone Country",
+  "Alan Jackson"
+ ],
+ [
+  "Goodbye Earl → All the Small Things",
+  "Dixie Chicks → blink-182"
+ ],
+ [
+  "Guitars, Cadillacs",
+  "Dwight Yoakam"
+ ],
+ [
+  "Gunpowder and Lead",
+  "Miranda Lambert"
+ ],
+ [
+  "Hard to Handle",
+  "The Black Crowes"
+ ],
+ [
+  "Here for the Party",
+  "Gretchen Wilson"
+ ],
+ [
+  "Hippies and Cowboys",
+  "Cody Jinks"
+ ],
+ [
+  "Honky Tonk Women",
+  "The Rolling Stones"
+ ],
+ [
+  "Horseback",
+  "Cody Johnson"
+ ],
+ [
+  "How Do You Like Me Now?!",
+  "Toby Keith"
+ ],
+ [
+  "Hurts So Good",
+  "John Mellencamp"
+ ],
+ [
+  "I Hope You're Happy Now",
+  "Carly Pearce & Lee Brice"
+ ],
+ [
+  "I Like It, I Love It",
+  "Tim McGraw"
+ ],
+ [
+  "I Love This Bar",
+  "Toby Keith"
+ ],
+ [
+  "I Never Lie",
+  "Zach Top"
+ ],
+ [
+  "I Saw Her Standing There",
+  "The Beatles"
+ ],
+ [
+  "If You're Gonna Play in Texas",
+  "Alabama"
+ ],
+ [
+  "I'm from the Country",
+  "Tracy Byrd"
+ ],
+ [
+  "I'm Not Pretty",
+  "Megan Moroney"
+ ],
+ [
+  "In a Hurry → Don't Stop Believin'",
+  ""
+ ],
+ [
+  "It's Five O'Clock Somewhere",
+  "Alan Jackson & Jimmy Buffett"
+ ],
+ [
+  "It's Still Rock and Roll to Me",
+  "Billy Joel"
+ ],
+ [
+  "Jackson",
+  "Johnny Cash & June Carter Cash"
+ ],
+ [
+  "John Cougar, John Deere, John 3:16",
+  "Keith Urban"
+ ],
+ [
+  "Jolene",
+  "Dolly Parton"
+ ],
+ [
+  "Just Like Heaven",
+  "The Cure"
+ ],
+ [
+  "Just What I Needed",
+  "The Cars"
+ ],
+ [
+  "Keep Your Hands to Yourself",
+  "Georgia Satellites"
+ ],
+ [
+  "Kerosene",
+  "Miranda Lambert"
+ ],
+ [
+  "Kiss Me in the Dark",
+  "Randy Rogers Band"
+ ],
+ [
+  "Last Night",
+  "Morgan Wallen"
+ ],
+ [
+  "Little Liza Jane",
+  "Vince Gill"
+ ],
+ [
+  "Little Red Wagon",
+  "Miranda Lambert"
+ ],
+ [
+  "Little White Church",
+  "Little Big Town"
+ ],
+ [
+  "Louisiana Saturday Night",
+  "Mel McDaniel"
+ ],
+ [
+  "Love Me Do",
+  "The Beatles"
+ ],
+ [
+  "Love Story",
+  "Taylor Swift"
+ ],
+ [
+  "Luckenbach, Texas",
+  "Waylon Jennings"
+ ],
+ [
+  "Mama Tried",
+  "Merle Haggard"
+ ],
+ [
+  "Mama's Broken Heart",
+  "Miranda Lambert"
+ ],
+ [
+  "Margaritaville",
+  "Jimmy Buffett"
+ ],
+ [
+  "Medley in G — Keep Me in Mind / Heaven / Santa Monica / Sweater Song / Beverly Hills",
+  "Zac Brown Band / Everclear / Weezer"
+ ],
+ [
+  "Mountain Music",
+  "Alabama"
+ ],
+ [
+  "Neon Moon",
+  "Brooks & Dunn"
+ ],
+ [
+  "Night Train",
+  "Jason Aldean"
+ ],
+ [
+  "Nine Ball",
+  "Zach Bryan"
+ ],
+ [
+  "Nothing on but the Radio",
+  "Gary Allan"
+ ],
+ [
+  "Oklahoma Smokeshow",
+  "Zach Bryan"
+ ],
+ [
+  "Only Daddy That'll Walk the Line",
+  "Waylon Jennings"
+ ],
+ [
+  "Open the Gate",
+  "Zach Bryan"
+ ],
+ [
+  "Over & Over",
+  "Benny Thomas (original)"
+ ],
+ [
+  "Pour Some Sugar on Me",
+  "Def Leppard"
+ ],
+ [
+  "Redneck Woman",
+  "Gretchen Wilson"
+ ],
+ [
+  "Ring of Fire",
+  "Johnny Cash"
+ ],
+ [
+  "Rocky Top",
+  "The Osborne Brothers"
+ ],
+ [
+  "Save a Horse (Ride a Cowboy)",
+  "Big & Rich"
+ ],
+ [
+  "Shallow",
+  "Lady Gaga & Bradley Cooper"
+ ],
+ [
+  "She Thinks My Tractor's Sexy",
+  "Kenny Chesney"
+ ],
+ [
+  "She's Got It All",
+  "Kenny Chesney"
+ ],
+ [
+  "She's in Love with the Boy",
+  "Trisha Yearwood"
+ ],
+ [
+  "Should've Been a Cowboy",
+  "Toby Keith"
+ ],
+ [
+  "Small Town Saturday Night",
+  "Hal Ketchum"
+ ],
+ [
+  "Sold (The Grundy County Auction Incident)",
+  "John Michael Montgomery"
+ ],
+ [
+  "Some Beach",
+  "Blake Shelton"
+ ],
+ [
+  "Some Girls Do",
+  "Sawyer Brown"
+ ],
+ [
+  "Something Like That",
+  "Tim McGraw"
+ ],
+ [
+  "Something More",
+  "Sugarland"
+ ],
+ [
+  "Sounds Like the Radio",
+  "Zach Top"
+ ],
+ [
+  "Springsteen",
+  "Eric Church"
+ ],
+ [
+  "Summer of '69",
+  "Bryan Adams"
+ ],
+ [
+  "Superstition",
+  "Stevie Wonder"
+ ],
+ [
+  "Surfin' USA",
+  "The Beach Boys"
+ ],
+ [
+  "Sweet Caroline",
+  "Neil Diamond"
+ ],
+ [
+  "Sweet Home Alabama",
+  "Lynyrd Skynyrd"
+ ],
+ [
+  "Take It Easy",
+  "Eagles"
+ ],
+ [
+  "Take Me Home, Country Roads",
+  "John Denver"
+ ],
+ [
+  "Ten Rounds with Jose Cuervo",
+  "Tracy Byrd"
+ ],
+ [
+  "Tennessee Whiskey",
+  "Chris Stapleton"
+ ],
+ [
+  "Tequila Makes Her Clothes Fall Off",
+  "Joe Nichols"
+ ],
+ [
+  "The Devil Went Down to Georgia",
+  "The Charlie Daniels Band"
+ ],
+ [
+  "The Middle",
+  "Jimmy Eat World"
+ ],
+ [
+  "The Rodeo Song",
+  "Garry Lee and Showdown"
+ ],
+ [
+  "There Was This Girl",
+  "Riley Green"
+ ],
+ [
+  "Third Rate Romance",
+  "The Amazing Rhythm Aces"
+ ],
+ [
+  "Trashy Women",
+  "Confederate Railroad"
+ ],
+ [
+  "Trouble",
+  ""
+ ],
+ [
+  "Universal Sound",
+  "Tyler Childers"
+ ],
+ [
+  "Watermelon Crawl",
+  "Tracy Byrd"
+ ],
+ [
+  "What Was I Thinkin'",
+  "Dierks Bentley"
+ ],
+ [
+  "When It Rains It Pours",
+  "Luke Combs"
+ ],
+ [
+  "Where the Wild Things Are",
+  "Luke Combs"
+ ],
+ [
+  "Whiskey Girl",
+  "Toby Keith"
+ ],
+ [
+  "Whitehouse Road",
+  "Tyler Childers"
+ ],
+ [
+  "Who's Your Daddy",
+  "Toby Keith"
+ ],
+ [
+  "You Can Call Me Al",
+  "Paul Simon"
+ ],
+ [
+  "You Look Like You Love Me",
+  "Ella Langley & Riley Green"
+ ],
+ [
+  "You May Be Right",
+  "Billy Joel"
+ ]
 ]
